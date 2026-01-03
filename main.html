@@ -1,65 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Custom Video Player</title>
-  <style>
-    .player {
-      max-width: 750px;
-      margin: 20px auto;
-      background: #000;
-      color: #fff;
-    }
+<div class="player">
+  <video class="player__video viewer" src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
 
-    .viewer {
-      width: 100%;
-    }
-
-    .player__controls {
-      display: flex;
-      align-items: center;
-      padding: 5px;
-      gap: 5px;
-    }
-
-    .progress {
-      flex: 1;
-      height: 8px;
-      background: #555;
-      cursor: pointer;
-      display: flex;
-    }
-
-    .progress__filled {
-      width: 0%;
-      background: #ffc600;
-      flex-basis: 0%;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="player">
-    <video
-      class="viewer"
-      src="https://www.w3schools.com/html/mov_bbb.mp4">
-    </video>
-
-    <div class="player__controls">
-      <button class="player__button">►</button>
-
-      <div class="progress">
-        <div class="progress__filled"></div>
-      </div>
-
-      <input type="range" class="volume" min="0" max="1" step="0.05" value="1">
-      <input type="range" class="playbackSpeed" min="0.5" max="2" step="0.1" value="1">
-
-      <button class="rewind">« 10s</button>
-      <button class="forward">25s »</button>
+  <div class="player__controls">
+    <div class="progress">
+      <div class="progress__filled"></div>
     </div>
+    
+    <button class="player__button toggle" title="Toggle Play">►</button>
+    
+    <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
+    
+    <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1">
+    
+    <button data-skip="-10" class="player__button">« 10s</button>
+    <button data-skip="25" class="player__button">25s »</button>
   </div>
-
-  <script src="scripts.js"></script>
-</body>
-</html>
+</div>
